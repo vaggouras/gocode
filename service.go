@@ -1,7 +1,7 @@
 package main
 import ("github.com/ant0ine/go-json-rest/rest"
 	"database/sql"
-	"github.com/go-sql-driver/mysql""
+	"github.com/go-sql-driver/mysql"
 	"fmt"
 	"log"
 	"net/http"
