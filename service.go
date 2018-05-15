@@ -1,11 +1,7 @@
 package main
 import ("github.com/ant0ine/go-json-rest/rest"
-	"database/sql"
-	"github.com/go-sql-driver/mysql""
-	"fmt"
 	"log"
 	"net/http"
-	"io/ioutil"
 	"os")
 func main() {
 	api := rest.NewApi()
@@ -14,13 +10,4 @@ func main() {
 		w.WriteJson(map[string]string{"Body": "Figher is running!"})
 	}))
 	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), api.MakeHandler()))
-	
-	response, err := http.Get("http://ip.jsontest.com/")
-    if err == nil {
-        defer response.Body.Close()
-        contents, err := ioutil.ReadAll(response.Body)
-        if err == nil {
-            fmt.Printf("%s\n", string(contents))
-        }
-    }
 }
