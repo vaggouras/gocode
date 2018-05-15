@@ -12,7 +12,7 @@ func main() {
 	api.SetApp(rest.AppSimple(func(w rest.ResponseWriter, r *rest.Request) {
 		w.WriteJson(map[string]string{"Body": "Figher is running!"})
 	}))
-	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), api.MakeHandler()))
+	fmt.Println(http.ListenAndServe(":"+os.Getenv("PORT"), api.MakeHandler()))
 	fmt.Println("Listening")
 	response, err := http.Get("http://ip.jsontest.com/")
 	if err != nil {
