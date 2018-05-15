@@ -10,4 +10,18 @@ func main() {
 		w.WriteJson(map[string]string{"Body": "Figher is running!"})
 	}))
 	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), api.MakeHandler()))
+	
+	response, err := http.Get("http://ip.jsontest.com/")
+	if err != nil {
+		fmt.Println("Error making GET call")
+	} else {
+	    defer response.Body.Close()
+        contents, err := ioutil.ReadAll(response.Body)
+		if err != nil {
+		  fmt.Println("Error parsing GET call")
+		} else {
+		  fmt.Printf("%s\n", string(contents))
+		}
+		
+	}
 }
