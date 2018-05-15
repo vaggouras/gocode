@@ -19,7 +19,7 @@ build:
         domain: $IDENTITY_DOMAIN
         IDENTIFIER: $IDENTIFIER
         application_name: $WERCKER_GIT_OWNER
-        application_type: go
+        application_type: golang
         repository: dockerhub
         file: go_fighter-0.0.1.$OPC_USERNAME.zip
         subscription_type: Hourly
