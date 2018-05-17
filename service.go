@@ -28,7 +28,7 @@ func main() {
 	}
 	
 	// try making http request against sample site
-	response, err := http.Get("http://129.157.179.180:3000/shield/33/45/white/oracledevstar")
+	response, err := http.Get("http://ip.jsontest.com/")
 	if err != nil {
 		fmt.Println("Error making GET call")
 	} else {
