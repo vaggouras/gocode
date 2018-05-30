@@ -1,3 +1,4 @@
+// My microservice!
 package main
 import ("github.com/ant0ine/go-json-rest/rest"
 	"fmt"
